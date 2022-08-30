@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Advanced E-portfolio</title>
+    <script src="app.js" defer></script>
     <link rel="stylesheet" href="styles.css" />
     <script
       src="https://kit.fontawesome.com/c8e4d183c2.js"
@@ -41,7 +42,7 @@
               Projects</a
             >
           </li>
-          <li class="nav__link ">
+          <li class="nav__link" onclick="toggleModel()">
             <a
               href="#"
               class="nav__link--anchor link__hover-effect link__hover-effect--black"
@@ -53,7 +54,7 @@
             <a
               href="#"
               class="nav__link--anchor link__hover-effect link__hover-effect--black"
-              ><i class="fa fa-adjust"></i
+              ><i class="fa fa-adjust" onclick="toggleContrast()"></i
             ></a>
           </li>
         </ul>
@@ -67,7 +68,7 @@
             from Southern Califoria with a a strong passion for building amazing
             web application with great functionality
             <br />
-            Heres a bit <b class="blue"> more about me.</b>
+            Heres a bit <b class="blue click" onclick="toggleModel()"> more about me.</b>
           </p>
           <div class="social__list">
             <a href="https://www.linkedin.com/in/arbaaz-iqbal-259767194/" target="_blank" class="social__link click">
@@ -83,7 +84,7 @@
           </div>
         </div>
       </header>
-      <button class="mail__btn click ">
+      <button class="mail__btn click" onclick="toggleModel()">
         <i class="fas fa-envelope"></i>
 
       </button>
@@ -122,10 +123,12 @@
         </div>
         </div>
         <div class="model__half model__contact">
+        <i class="fas fa-times model__exit click" onclick="toggleModel()"></i>
+
             
             <h3 class="model__title model__title--contact">Lets have a chat!</h3>
             <h3 class="model__sub-title model__sub-title--contact">I'd love you hear from you.</h3>
-            <form id ="contact__form"action="">
+            <form id ="contact__form" onsubmit="contact(event)">
                 <div class="form__item">
                     <label class = "form__item--label">Name</label>
                     <input class = "input" name ="user_name" type="text" required></input>
@@ -147,7 +150,6 @@
                 Thanks for the message. Looking foward to speaking with you soon.
             </div>
         </div>
-        <i class="fas fa-times model__exit click"></i>
     </div>
 
     </section>

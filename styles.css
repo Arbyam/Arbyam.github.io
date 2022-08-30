@@ -25,6 +25,7 @@ p{
 
 section{
     background: rgb(245, 245, 245);
+    transition: all 300ms ease;
    
 }
 textarea{
@@ -83,6 +84,21 @@ border-color:#006d77
 
 }
 
+nav,
+.scroll,
+.header{
+    opacity: 1;
+    visibility: visible;
+    transition: all 600ms 700ms;
+}
+.model--open nav,
+.model--open .scroll,
+.model--open .header{
+    opacity: 0;
+    visibility: hidden;
+    transition: all 400ms;
+}
+
 
 
 .click{
@@ -108,6 +124,15 @@ border-color:#006d77
     text-align: left;
     line-height: 1;
 }
+
+.model--open .model{
+    z-index: 60;
+    box-shadow: 0 20px 80px 0 rgb(0,0,0.55);
+    visibility: visible;
+
+}
+    
+
 .container{
     width: 100%;
     padding: 50px 0;
@@ -118,6 +143,37 @@ border-color:#006d77
     margin: 0 auto;
     padding:0 12px;
 }
+
+
+
+.dark-theme .title,
+.dark-theme .section__title,
+.dark-theme .section__sub-title,
+.dark-theme .nav__link--anchor,
+.dark-theme .fa-adjust,
+.dark-theme .header__para{
+
+color: white;
+
+}
+.dark-theme .mail__btn{
+    background-color: white;
+    color: #242424;
+}
+.dark-theme section{
+    background-color: #242424;
+}
+
+.dark-theme .scroll__icon{
+    border-color: white;
+}
+.dark-theme .scroll__icon:after{
+    background-color: white;
+}
+.dark-theme .link__hover-effect--black:after{
+background-color: white;
+}
+
 
 
 /*
@@ -288,10 +344,12 @@ Model
     width: 90%;
     max-width: 1100px;
     height: 700px;
-    box-shadow: 0 20px 80px 0 rgb(0,0,0.55);
     border-radius: 20px;
     overflow: hidden;
     display: flex;
+    visibility: hidden;
+    z-index: -1;
+    transition: visibility 1s, z-index 1s, box-shadow 0.5s ease;
 
 
 }
@@ -303,10 +361,19 @@ Model
     flex-direction: column;
     justify-content: center;
     position: relative;
+    transition: all 300ms ease-in;
+}
+
+.model--open .model__about,
+.model--open .model__contact
+{
+    transform: translateX(0%);
 }
 
 .model__about{
-    background: rgb(245,245,255);
+    background-color: rgb(245,245,245);
+    transform: translateX(-110%);
+
    
   
 }
@@ -347,6 +414,7 @@ Model
 .model__contact{
     background-color: #242424;
     color: white;
+    transform: translateX(110%);
 
 
 }
@@ -398,7 +466,7 @@ background-color: transparent;
     left: 0;
     width: 100%;
     height: 100%;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     z-index: -1;
@@ -418,6 +486,10 @@ background-color: transparent;
     font-weight: bold;
     text-align: center;
     padding: 28px;
+}
+.model__overlay--visible{
+    z-index: 1;
+    display: flex;
 }
 
 
