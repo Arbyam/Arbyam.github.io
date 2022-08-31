@@ -6,6 +6,9 @@
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
+html{
+    scroll-behavior: smooth;
+}
 
 a{
     text-decoration: none;
@@ -190,9 +193,9 @@ LANDING PAGE
 .header{
     padding: 0 30px;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 60%;
+    left: 60%;
+    transform: translate(-60%, -60%);
     width: 100%;
     max-width: 1000px;
 }
@@ -236,6 +239,9 @@ LANDING PAGE
  position: absolute;
 bottom: 32px;
 right: 40px;
+z-index: 100;
+position: fixed;
+box-shadow: 0 12px 30px rgb(0, 0, 0.3);
 
 }
 .scroll{
@@ -633,6 +639,7 @@ footer{
     padding: 6% 0;
     background: #242424;
     display: flex;
+    position: relative;
 
 }
 
@@ -718,5 +725,62 @@ shapes on the third column:
 .shape--8{
     top: 80vh;
    left: 80vw;
+}
+
+
+/* Small phones, tablets, large smart phones */
+@media (max-width: 768px){
+.title{
+    font-size: 80px;
+}
+.header__para{
+    font-size: 20px;
+}
+.model{
+    top: 0;
+    left: 0;
+    transform: none;
+    width: 100%;
+    height: auto;
+    flex-direction: column-reverse;
+    border-radius: 0;
+
+}
+
+.model__half{
+    width: 100%;
+}
+}
+
+/* small phones */
+
+@media(max-width: 480px){
+    .title{ font: size 52px;}
+    .header__para{
+        font-size: 18px;
+    }
+
+    .nav__link:first-child{
+        display: none;
+    }
+
+    .project__description--para{
+        display: none;
+    }
+
+    .project__description{
+        left: 0;
+        padding: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .project__description--sub-title{
+        margin-bottom: 8px;
+    }
+.model__half{
+    padding: 40px;
+}
+
 }
 
